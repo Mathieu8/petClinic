@@ -1,0 +1,3 @@
+rootProject.name = 'petClinic'
+
+include 'pet-clinic-data'
