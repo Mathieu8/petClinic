@@ -14,7 +14,6 @@ plugins {
     id 'java'
     id 'application'
 }
-apply plugin: 'java'
 apply plugin: 'wro4j'
 
 group = 'com.example.petClinic'
@@ -39,7 +38,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation project(':pet-clinic-data')
     webjars 'org.webjars:jquery:2.1.4'
-    webjars 'org.webjars:bootstrap:3.3.4'
+    webjars 'org.webjars:bootstrap:3.3.7-1'
 }
 
 test {
@@ -63,10 +62,10 @@ webResources {
     }
 
     bundle ('theme-default') {
-        css 'webjars/bootstrap/3.3.4/less/bootstrap.less'
+        css 'webjars/bootstrap/3.3.7-1/less/bootstrap.less'
         css 'themes/default/main.css'
 
-        cssOverrideImport 'variables.less', 'variables.less'
+        cssOverrideImport 'variables.less', '/variables.less'
         preProcessor 'less4j', 'cssUrlRewriting'
     }
 
