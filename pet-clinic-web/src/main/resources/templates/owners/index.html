@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">>
 <body>
 <!-- /*thymesVar id="owner" type="com.example.petclinic.model.Owner"*/-->
 <h1 th:text="'List of Owners'">List of owners</h1>

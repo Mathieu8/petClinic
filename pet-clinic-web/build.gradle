@@ -14,7 +14,9 @@ plugins {
     id 'java'
     id 'application'
 }
+//apply plugin: 'java'
 apply plugin: 'wro4j'
+apply plugin: 'maven'
 
 group = 'com.example.petClinic'
 version = '0.0.1-SNAPSHOT'
@@ -38,7 +40,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation project(':pet-clinic-data')
     webjars 'org.webjars:jquery:2.1.4'
-    webjars 'org.webjars:bootstrap:3.3.7-1'
+    webjars 'org.webjars:bootstrap:3.3.4'
 }
 
 test {
@@ -46,8 +48,11 @@ test {
 }
 
 springBoot {
-    mainClassName = 'com.example.petclinic.PetClinicApplication'
+//    mainClassName = 'com.example.petclinic.PetClinicApplication'
+    setMainClassName('com.example.petclinic.PetClinicApplication')
+
 }
+
 
 
 
@@ -62,10 +67,10 @@ webResources {
     }
 
     bundle ('theme-default') {
-        css 'webjars/bootstrap/3.3.7-1/less/bootstrap.less'
+        css 'webjars/bootstrap/3.3.4/less/bootstrap.less'
         css 'themes/default/main.css'
 
-        cssOverrideImport 'variables.less', '/variables.less'
+        cssOverrideImport 'variables.less', 'variables.less'
         preProcessor 'less4j', 'cssUrlRewriting'
     }
 
