@@ -6,7 +6,7 @@ import java.util.Set;
 public class Owner extends Person{
     private String addres;
     private String city;
-    private String tekephone;
+    private String telephone;
     private Set<Pet> pets = new HashSet<>();
 
     public String getAddres() {
@@ -25,12 +25,12 @@ public class Owner extends Person{
         this.city = city;
     }
 
-    public String getTekephone() {
-        return tekephone;
+    public String getTelephone() {
+        return telephone;
     }
 
     public void setTelephone(String tekephone) {
-        this.tekephone = tekephone;
+        this.telephone = tekephone;
     }
 
     public Set<Pet> getPets() {
