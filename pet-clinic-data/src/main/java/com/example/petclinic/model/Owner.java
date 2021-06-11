@@ -29,7 +29,7 @@ public class Owner extends Person{
         return tekephone;
     }
 
-    public void setTekephone(String tekephone) {
+    public void setTelephone(String tekephone) {
         this.tekephone = tekephone;
     }
 
