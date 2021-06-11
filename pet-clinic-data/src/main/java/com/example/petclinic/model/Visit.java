@@ -8,7 +8,7 @@ public class Visit extends BaseEntity {
     private Pet pet;
 
     public Visit() {
-        time = LocalDateTime.now()
+        time = LocalDateTime.now();
     }
 
     public LocalDateTime getTime() {
