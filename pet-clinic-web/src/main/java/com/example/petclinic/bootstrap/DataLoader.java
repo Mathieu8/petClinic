@@ -30,10 +30,10 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        PetType dog = addPetType(petTypeService, "Dog");
-        PetType cat = addPetType(petTypeService, "cat");
-        PetType bird = addPetType(petTypeService, "bird");
-        PetType fish = addPetType(petTypeService, "fish");
+        PetType dog = addPetType( "Dog");
+        PetType cat = addPetType( "cat");
+        PetType bird = addPetType( "bird");
+        PetType fish = addPetType( "fish");
 
         Owner owner1 = new Owner();
         owner1.setFirstName("a");
@@ -84,7 +84,7 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("loaded vets %%%%%%%%");
     }
 
-    private PetType addPetType(PetTypeService petTypeService, String petType) {
+    private PetType addPetType(  String petType) {
         PetType temp = new PetType();
         temp.setName(petType);
        return petTypeService.save(temp);
