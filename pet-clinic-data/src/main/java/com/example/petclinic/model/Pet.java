@@ -2,6 +2,8 @@ package com.example.petclinic.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "pets")
@@ -18,6 +20,14 @@ public class Pet extends BaseEntity {
     private Owner owner;
     @Column(name = "birthday")
     private Date birthday;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    private Set<Visit> visits = new HashSet<>();
+
+    public Visit addVisit(Visit visit){
+        visits.add(visit);
+        return visit;
+    }
 
     public String getName() {
         return name;
@@ -49,5 +59,13 @@ public class Pet extends BaseEntity {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
     }
 }
