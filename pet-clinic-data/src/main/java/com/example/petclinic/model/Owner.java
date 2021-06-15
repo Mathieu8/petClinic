@@ -1,9 +1,15 @@
 package com.example.petclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "owners")
 public class Owner extends Person{
@@ -17,35 +23,12 @@ public class Owner extends Person{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
-    public String getAddres() {
-        return addres;
-    }
-
-    public void setAddres(String addres) {
+    @Builder
+    public Owner(Long id, String firstName, String lastName, String addres, String city, String telephone, Set<Pet> pets) {
+        super(id, firstName, lastName);
         this.addres = addres;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String tekephone) {
-        this.telephone = tekephone;
-    }
-
-    public Set<Pet> getPets() {
-        return pets;
-    }
-
-    public void setPets(Set<Pet> pets) {
+        this.telephone = telephone;
         this.pets = pets;
     }
 }
