@@ -3,7 +3,7 @@ package com.example.petclinic.services.map;
 import com.example.petclinic.model.Owner;
 import com.example.petclinic.model.Pet;
 import com.example.petclinic.services.OwnerService;
-import com.example.petclinic.services.PetSetvice;
+import com.example.petclinic.services.PetService;
 import com.example.petclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -14,11 +14,11 @@ import java.util.Set;
 @Profile({"default", "map" })
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     private final PetTypeService petTypeService;
-    private final PetSetvice petService;
+    private final PetService petService;
 
-    public OwnerServiceMap(PetTypeService petTypeService, PetSetvice petSetvice) {
+    public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
         this.petTypeService = petTypeService;
-        this.petService = petSetvice;
+        this.petService = petService;
     }
 
     @Override
