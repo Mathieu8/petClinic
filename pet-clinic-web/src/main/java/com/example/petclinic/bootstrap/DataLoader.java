@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 
 @Component
 public class DataLoader implements CommandLineRunner {
-
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
