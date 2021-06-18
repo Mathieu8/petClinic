@@ -15,7 +15,7 @@ plugins {
     id 'application'
 }
 //apply plugin: 'java'
-apply plugin: 'wro4j'
+//apply plugin: 'wro4j'
 apply plugin: 'maven'
 
 group = 'com.example.petClinic'
@@ -42,8 +42,8 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation project(':pet-clinic-data')
-    webjars 'org.webjars:jquery:2.1.4'
-    webjars 'org.webjars:bootstrap:3.3.4'
+//    webjars 'org.webjars:jquery:2.1.4'
+//    webjars 'org.webjars:bootstrap:3.3.4'
 }
 
 test {
@@ -58,26 +58,26 @@ springBoot {
 
 
 
-
-webResources {
-    bundle ('core') {
-        js 'js/**/*.js'
-        preProcessor 'jsMin'
-    }
-
-    bundle ('libs') {
-        js 'webjars/jquery/2.1.4/jquery.min.js'
-    }
-
-    bundle ('theme-default') {
-        css 'webjars/bootstrap/3.3.4/less/bootstrap.less'
-        css 'themes/default/main.css'
-
-        cssOverrideImport 'variables.less', 'variables.less'
-        preProcessor 'less4j', 'cssUrlRewriting'
-    }
-
-    assets {
-        include 'themes/default/images/**'
-    }
-}
+//
+//webResources {
+//    bundle ('core') {
+//        js 'js/**/*.js'
+//        preProcessor 'jsMin'
+//    }
+//
+//    bundle ('libs') {
+//        js 'webjars/jquery/2.1.4/jquery.min.js'
+//    }
+//
+//    bundle ('theme-default') {
+//        css 'webjars/bootstrap/3.3.4/less/bootstrap.less'
+//        css 'themes/default/main.css'
+//
+//        cssOverrideImport 'variables.less', 'variables.less'
+//        preProcessor 'less4j', 'cssUrlRewriting'
+//    }
+//
+//    assets {
+//        include 'themes/default/images/**'
+//    }
+//}
