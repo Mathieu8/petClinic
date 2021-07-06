@@ -6,9 +6,9 @@ import com.example.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 
 @Component
@@ -42,10 +42,11 @@ public class DataLoader implements CommandLineRunner {
         PetType fish = addPetType("fish");
 
 
-        Pet annaKat = addPet(cat, "annanas", Date.valueOf(LocalDate.now().minusYears(1)));
+//        Pet annaKat = addPet(cat, "annanas", Date.valueOf(LocalDate.now().minusYears(1)));
+        Pet annaKat = addPet(cat, "annanas", LocalDateTime.of(LocalDate.now().minusYears(1), LocalTime.NOON));
         Owner owner1 = addOwner("a", "anna", "123 appelstraat", "appeldoorn", "111 111 11 11", annaKat);
-        Pet basDog1 = addPet(dog, "berend", Date.valueOf(LocalDate.now().minusWeeks(200)));
-        Pet basDog2 = addPet(dog, "botje", Date.valueOf(LocalDate.now().minusWeeks(200)));
+        Pet basDog1 = addPet(dog, "berend", LocalDateTime.of(LocalDate.now().minusWeeks(200), LocalTime.NOON));
+        Pet basDog2 = addPet(dog, "botje", LocalDateTime.of(LocalDate.now().minusWeeks(200), LocalTime.NOON));
         Owner owner2 = addOwner("b", "bas", "2 buekenlaan", "baarn", "222 222 22 22", basDog1, basDog2);
 
         System.out.println("loaded Owners........");
@@ -101,11 +102,11 @@ public class DataLoader implements CommandLineRunner {
         return ownerService.save(owner);
     }
 
-    private Pet addPet(PetType petType, String name, Date bDay) {
+    private Pet addPet(PetType petType, String name, LocalDateTime bDay) {
         Pet pet = new Pet();
         pet.setPetType(petType);
         pet.setName(name);
-        pet.setBirthday(bDay);
+        pet.setBirthDate(bDay);
         return pet;
 
     }

@@ -3,7 +3,7 @@ package com.example.petclinic.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,8 +25,8 @@ public class Pet extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private Owner owner;
-    @Column(name = "birthday")
-    private Date birthday;
+    @Column(name = "birthDate")
+    private LocalDateTime birthDate;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
