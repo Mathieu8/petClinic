@@ -7,5 +7,5 @@ import java.util.List;
 public interface OwnerService extends CrudService<Owner, Long> {
     Owner findByLastName(String lastName);
 
-    List<Owner> findAllByLastNameLike(String anyString);
+    List<Owner> findByLastNameContaining(String anyString);
 }
