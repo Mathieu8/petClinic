@@ -1,9 +1,6 @@
 package com.example.petclinic.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
@@ -32,6 +29,7 @@ public class Pet extends BaseEntity {
     @Column(name = "birthDate")
     private LocalDateTime birthDate;
 
+    @Builder.Default
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
 
